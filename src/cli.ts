@@ -102,7 +102,12 @@ async function commandDupes(args: ParsedArgs): Promise<void> {
             wasted: group.size * (group.files.length - 1),
             files: group.files.map((file) => file.relPath),
           })),
-          totals: { groups: groups.length, files: totalFiles, wasted: totalWasted },
+          totals: {
+            groups: groups.length,
+            scanned: files.length,
+            files: totalFiles,
+            wasted: totalWasted,
+          },
         },
         null,
         2,
